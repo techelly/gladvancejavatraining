@@ -1,11 +1,12 @@
 package java8features.methodreference;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class OrderMainApp {
+public class SortExample {
 
 	public static void main(String[] args) {
 		Order orderOne = new Order("AUD", 15000.00);
@@ -29,27 +30,17 @@ public class OrderMainApp {
 		Collections.sort(orderList, Comparator.comparing(Order::getAmount));
 		System.out.println("*************Sorted orderList ********************");
 		orderList.forEach(System.out::println);
-
-		System.out.println("*************************");
-		// Static method reference
-		DisplayInformation display = Order::displayCurrency;
-		display.display();
-		System.out.println("*************************");
-
-		// Reference to instance method
-		DisplayInformation displayInfo = orderOne::displayAmount;
-		displayInfo.display();
-		System.out.println("*************************");
-
-		// Reference to constructor
-		OrderAmount orderAmount = Order::new;
-		System.out.println(orderAmount.getOrderAmount(1500000.50));
-		
-		System.out.println("*************************");
-		Collections.sort(orderList, Comparator.comparing(Order::getAmount).thenComparing(Order::getCurrency));
+		//System.out.println("*************Sorted orderList Reverse********************");
+		//Collections.reverse(orderList);
+		//orderList.forEach(System.out::println);
+		System.out.println("**********************Reverser Order*******************************");
+		Collections.sort(orderList,Collections.reverseOrder(Comparator.comparing(Order::getAmount)));
 		orderList.forEach(System.out::println);
-
 		
+		System.out.println("*****************************************************");
+		List<Integer> listOfInteger = Arrays.asList(5,3,2,7,1,4);
+		Collections.sort(listOfInteger,Collections.reverseOrder());
+		listOfInteger.forEach(System.out::println);
 	}
 
 }
