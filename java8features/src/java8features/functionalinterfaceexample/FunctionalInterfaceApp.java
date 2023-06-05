@@ -3,6 +3,7 @@ package java8features.functionalinterfaceexample;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class FunctionalInterfaceApp {
@@ -37,6 +38,16 @@ public class FunctionalInterfaceApp {
 		evaluate(orderList,o->System.out.println(o.getCurrency()));
 		List<Order> filteredOrder= evaluatePredicate(orderList,o->o.getAmount()<10000);
 		System.out.println(filteredOrder);
+		
+		//Function interface
+		Function<List<Order>,Double> averageOrder = orderLists->{
+			double total = 0.0;
+			for(Order order: orderLists) {
+				total+=order.getAmount();//total=total+order.getAmount
+			}
+			return total/orderList.size();//calculating the average
+		};
+		System.out.println(averageOrder.apply(orderList));
 	}
 
 	public static void evaluate(List<Order> orderList,Consumer<Order> consumer) {
