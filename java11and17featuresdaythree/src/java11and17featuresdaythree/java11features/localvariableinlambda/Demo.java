@@ -3,7 +3,7 @@ package java11and17featuresdaythree.java11features.localvariableinlambda;
 public class Demo {
 
 	public static void main(String[] args) {
-		Cal cal = (var a, var b) -> a + b;
+		Cal cal = (var a, v   ar b) -> a + b;
 		int result = cal.sum(10, 20);
 		System.out.println(result);
 		/**
