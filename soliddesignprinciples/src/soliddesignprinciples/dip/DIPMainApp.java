@@ -11,7 +11,10 @@ public class DIPMainApp {
 		emp.setEmpName("Manish");
 		Department dept = new Department();
 		emp.setDepartment(dept);
+	
+	
+
+
+    
 	}
-	
-	
 }
