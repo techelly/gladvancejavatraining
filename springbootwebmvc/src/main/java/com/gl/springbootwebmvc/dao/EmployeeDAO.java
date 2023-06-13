@@ -9,7 +9,7 @@ public interface EmployeeDAO {
 	//Retrieve
 		public Employee retrieveEmployee(Integer empId);
 	//Update
-		public Employee updateEmployee(Employee employee);
+		public String updateEmployee(Employee employee);
 	//Delete
 		public String deleteEmployee(Integer empId);
 }

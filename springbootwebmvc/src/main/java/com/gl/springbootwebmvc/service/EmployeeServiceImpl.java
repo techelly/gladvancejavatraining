@@ -23,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee updateEmployee(Employee employee) {
+	public String updateEmployee(Employee employee) {
 		return empDAO.updateEmployee(employee);
 	}
 

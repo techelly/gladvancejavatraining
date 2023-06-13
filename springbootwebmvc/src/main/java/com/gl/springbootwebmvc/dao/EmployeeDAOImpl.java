@@ -30,14 +30,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Employee updateEmployee(Employee employee) {
+	public String updateEmployee(Employee employee) {
 		for(Employee e: empList) {
 			if(e.getEmpId() == employee.getEmpId()) {
 				//e.setDepartment(employee.getDepartment());
 				e.setEmpName(employee.getEmpName());
+				return "Employee with id "+employee.getEmpId()+" updated successfully";
 			}
+							
 		}
-		return employee;
+		return "Employee with id "+employee.getEmpId()+" not updated successfully";
+
+		
 	}
 
 	@Override
