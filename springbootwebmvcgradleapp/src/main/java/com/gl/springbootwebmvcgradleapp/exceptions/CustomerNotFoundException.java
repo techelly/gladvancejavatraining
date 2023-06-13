@@ -1,10 +1,10 @@
 package com.gl.springbootwebmvcgradleapp.exceptions;
-//user defined exception or custom exception
-public class BookNotFoundException extends RuntimeException{
+
+public class CustomerNotFoundException extends RuntimeException{
 	
 	private String message;
 
-	public BookNotFoundException(String message) {
+	public CustomerNotFoundException(String message) {
 		this.message = message;
 	}
 
