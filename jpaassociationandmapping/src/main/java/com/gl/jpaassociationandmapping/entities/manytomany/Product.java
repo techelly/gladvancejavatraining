@@ -38,5 +38,12 @@ public class Product {
 	@Exclude
 	@JsonIgnore
 	private Set<Order> orders;
-
+	/*
+	 * @Override public String toString() { return "Product [productId=" + productId
+	 * + ", productName=" + productName + ", price=" + price + ", orders=" + orders
+	 * + "]"; }
+	 */
+	
+	
+	
 }
