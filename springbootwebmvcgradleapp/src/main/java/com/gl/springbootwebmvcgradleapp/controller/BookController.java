@@ -19,11 +19,14 @@ import com.gl.springbootwebmvcgradleapp.entities.Book;
 import com.gl.springbootwebmvcgradleapp.exceptions.BookNotFoundException;
 import com.gl.springbootwebmvcgradleapp.service.BookService;
 
+import lombok.extern.slf4j.Slf4j;
+//@Controller + @ResponseBody = @RestController
 @RestController
+@Slf4j
 public class BookController {
 	@Autowired
 	private BookService bookService;
-	
+	//private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(BookController.class);
 	//Create
 	@PostMapping("/addbook")
 	public Book addBook(@RequestBody Book book){
@@ -33,6 +36,7 @@ public class BookController {
 	@GetMapping("/bookbyid")
 	public ResponseEntity<Book> getBookById(@RequestParam("bookId") Integer bookId) throws BookNotFoundException{
 		Book book =  bookService.getBookById(bookId);
+		log.info("Using Sl4j logging ---- Book retrieved successfully ! book id is "+bookId);
 		return new ResponseEntity<Book>(book,HttpStatus.OK);
 	}
 	
@@ -61,6 +65,13 @@ public class BookController {
 	public ResponseEntity<Book> getBookByName(@PathVariable("name") String bookName) throws BookNotFoundException{
 		Book book =  bookService.getBookByName(bookName);
 		return new ResponseEntity<Book>(book,HttpStatus.OK);
+	}
+	
+	@GetMapping("/bookbypublishserandprice")
+	public ResponseEntity<List<Book>> getBookByPublisherAndPrice(@RequestParam("publisher") String bookName, @RequestParam("price") Double price) throws BookNotFoundException{
+		List<Book> books =  bookService.getBookByPublisherAndPrice(bookName, price);
+		
+		return new ResponseEntity<List<Book>>(books,HttpStatus.OK);
 	}
 	
 }

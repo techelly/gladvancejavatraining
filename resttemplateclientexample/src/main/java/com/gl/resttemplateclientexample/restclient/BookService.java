@@ -1,9 +1,9 @@
-package com.gl.springbootwebmvcgradleapp.service;
+package com.gl.resttemplateclientexample.restclient;
 
 import java.util.List;
 
-import com.gl.springbootwebmvcgradleapp.entities.Book;
-import com.gl.springbootwebmvcgradleapp.exceptions.BookNotFoundException;
+import com.gl.resttemplateclientexample.exceptions.BookNotFoundException;
+import com.gl.resttemplateclientexample.model.Book;
 
 public interface BookService {
 	//Create
@@ -11,9 +11,9 @@ public interface BookService {
 	//Retrieve
 	public Book getBookById(Integer bookId) throws BookNotFoundException;
 	//Update
-	public Book updateBook(Book book) throws BookNotFoundException;
+	public void updateBook(Book book) throws BookNotFoundException;
 	//Delete
-	public String deleteBookById(Integer bookId) throws BookNotFoundException;
+	public void deleteBookById(Integer bookId) throws BookNotFoundException;
 	
 	//Retrieve all books
 	public List<Book> getAllBoooks() throws BookNotFoundException;

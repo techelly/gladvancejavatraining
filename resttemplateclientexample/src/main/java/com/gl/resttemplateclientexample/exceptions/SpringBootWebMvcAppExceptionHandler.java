@@ -1,4 +1,4 @@
-package com.gl.springbootwebmvcgradleapp.exceptions;
+package com.gl.resttemplateclientexample.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +12,13 @@ public class SpringBootWebMvcAppExceptionHandler {
 	public ResponseEntity<String> handlBookNotFoundException() {
 		return new ResponseEntity<String>("Book not found in a record", HttpStatus.NOT_FOUND);
 	}
+	
+	/**
 
 	@ExceptionHandler(CustomerNotFoundException.class)
 	public ResponseEntity<String> handlCustomerNotFoundException() {
 		return new ResponseEntity<String>("Customer not found in a record", HttpStatus.NOT_FOUND);
-	}
+	}**/
 	
 	/**
 	@ExceptionHandler(value = CustomException.class)

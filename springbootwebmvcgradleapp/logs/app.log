@@ -1,0 +1,10 @@
+2023-06-14 18:05:05,246 INFO c.g.s.SpringbootwebmvcgradleappApplication [restartedMain] Starting SpringbootwebmvcgradleappApplication using Java 17.0.7 with PID 52032 (D:\globallogicadvance\springbootwebmvcgradleapp\bin\main started by UD SYSTEMS in D:\globallogicadvance\springbootwebmvcgradleapp)
+2023-06-14 18:05:05,251 DEBUG c.g.s.SpringbootwebmvcgradleappApplication [restartedMain] Running with Spring Boot v3.1.0, Spring v6.0.9
+2023-06-14 18:05:05,252 INFO c.g.s.SpringbootwebmvcgradleappApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-06-14 18:05:08,086 INFO c.g.s.SpringbootwebmvcgradleappApplication [restartedMain] Started SpringbootwebmvcgradleappApplication in 3.071 seconds (process running for 3.747)
+2023-06-14 18:05:21,345 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-06-14 18:05:21,346 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Completed initialization in 0 ms
+2023-06-14 18:05:28,844 INFO c.g.s.s.BookServiceImpl [http-nio-8080-exec-4] Book is present in the database 1
+2023-06-14 18:05:28,844 INFO c.g.s.c.BookController [http-nio-8080-exec-4] Using Sl4j logging ---- Book retrieved successfully ! book id is 1
+2023-06-14 18:05:48,687 INFO c.g.s.s.BookServiceImpl [http-nio-8080-exec-6] Book with id 11 does not exists in our record
+2023-06-14 18:05:48,689 WARN o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [com.gl.springbootwebmvcgradleapp.exceptions.BookNotFoundException: Book with id 11 does not exists in our record]
