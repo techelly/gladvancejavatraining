@@ -27,5 +27,7 @@ public class HelloControllerTest {
 		ResponseEntity<String>  response= restTemplate.getForEntity(new URL("http://localhost:"+port+"/hello").toString(), String.class);
 		assertEquals("I am hello controller", response.getBody());
 	}
+			
+			
 	
 }

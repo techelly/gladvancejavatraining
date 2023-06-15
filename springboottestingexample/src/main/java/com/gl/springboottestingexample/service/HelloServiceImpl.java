@@ -15,5 +15,10 @@ public class HelloServiceImpl implements HelloService {
 		
 		return helloRepo.getMessage();
 	}
+	@Override
+	public void display() {
+		System.out.println("Hi");
+		
+	}
 
 }

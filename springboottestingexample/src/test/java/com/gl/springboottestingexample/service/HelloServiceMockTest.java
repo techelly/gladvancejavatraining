@@ -2,6 +2,10 @@ package com.gl.springboottestingexample.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -38,5 +42,17 @@ public class HelloServiceMockTest {
 	@Test
 	void testGetMessageSuccess() {
 		assertEquals("Hello Mockito From Repository", helloService.getMessage());
+	}
+	
+	//For void method use this Mockito doNothing().when() and verify()
+	
+	@Test
+	void testDisplay() {
+		HelloService service = mock(HelloService.class);
+		
+		doNothing().when(service).display();
+		service.display();
+		
+		verify(service,times(1)).display();
 	}
 }
