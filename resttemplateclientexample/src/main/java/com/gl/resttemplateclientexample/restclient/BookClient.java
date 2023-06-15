@@ -37,6 +37,10 @@ public class BookClient implements BookService{
 
 	@Override
 	public void deleteBookById(Integer bookId) throws BookNotFoundException {
+		/**
+		ResponseEntity<String> response = restTemplate.getForEntity(ROOT_URI+"/deletebookbyid"+bookId, String.class);
+		System.out.println(response.getBody());
+		**/
 		restTemplate.delete(ROOT_URI+"/deletebookbyid",bookId);
 	}
 
